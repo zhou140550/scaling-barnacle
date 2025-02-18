@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程页面</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(./img/bg_页面_1.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            background-color: #555;
+            border-radius: 30px;
+            overflow: hidden;
+            width: 1200px;
+            height: 800px;
+        }
+
+        .menu {
+            background-color: #ffcc66;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+        .menu-item {
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .menu-item:hover {
+            background-color: #ffe680;
+        }
+
+        .menu-item.active {
+            background-color: #fff;
+            color: #00bfa5;
+            font-weight: bold;
+            border-left: 5px solid #b22222;
+        }
+
+        .submenu {
+            display: none;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .submenu-item {
+            padding: 10px;
+            margin: 5px 0;
+            text-align: left;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .submenu-item:hover {
+            background-color: #ffe680;
+        }
+
+        .submenu-item.active {
+            background-color: #fff;
+            color: #00bfa5;
+            font-weight: bold;
+            border-left: 5px solid #b22222;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content img {
+            width: 300px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        /* 针对iPad的样式优化 */
+        @media (min-device-width: 768px) and (max-device-width: 1024px) {
+            .container {
+                width: 1200px;
+                height: 800px;
+            }
+
+            .menu {
+                width: 250px;
+                padding: 20px;
+            }
+
+            .menu-item,
+            .submenu-item {
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        /* 隐藏内容容器的样式 */
+        .hidden-content {
+            display: none;
+        }
+    </style>
+    <!-- 引入 jQuery 库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="menu-item" data-target="course-intro">课程介绍</div>
+            <div class="menu-item" data-target="enlightenment-class">启蒙班</div>
+            <div class="submenu">
+                <div class="submenu-item" data-target="teachers">任课老师</div>
+                <div class="submenu-item" data-target="class-display">课堂展示</div>
+            </div>
+            <div class="menu-item" data-target="junior-class">初级班</div>
+            <div class="menu-item" data-target="middle-class">初中班级</div>
+        </div>
+        <div class="content" id="content">
+            <img src="./img/logo.png" alt="" />
+        </div>
+    </div>
+    <!-- 隐藏内容容器 -->
+    <div class="hidden-content">
+        <div id="course-intro">
+            <!-- 这里可以添加课程介绍的详细排版，如div和图片 -->
+            <div>课程介绍的具体内容</div>
+            <img src="./img/course-intro.png" alt="课程介绍图片">
+        </div>
+        <div id="enlightenment-class">
+            <!-- 启蒙班的详细排版 -->
+            <div>启蒙班的具体内容</div>
+            <img src="./img/enlightenment-class.png" alt="启蒙班图片">
+        </div>
+        <div id="teachers">
+            <!-- 任课老师的详细排版 -->
+            <div>任课老师的具体内容</div>
+            <img src="./img/teachers.png" alt="任课老师图片">
+        </div>
+        <div id="class-display">
+            <!-- 课堂展示的详细排版 -->
+            <div>课堂展示的具体内容</div>
+            <img src="./img/class-display.png" alt="课堂展示图片">
+        </div>
+        <div id="junior-class">
+            <!-- 初级班的详细排版 -->
+            <div>初级班的具体内容</div>
+            <img src="./img/junior-class.png" alt="初级班图片">
+        </div>
+        <div id="middle-class">
+            <!-- 初中班级的详细排版 -->
+            <div>初中班级的具体内容</div>
+            <img src="./img/middle-class.png" alt="初中班级图片">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // 菜单项点击事件
+            $('.menu-item').click(function () {
+                const $this = $(this);
+                const $submenu = $this.next('.submenu');
+
+                // 移除所有菜单项和子菜单项的 active 类
+                $('.menu-item, .submenu-item').removeClass('active');
+                // 隐藏所有子菜单
+                $('.submenu').hide();
+
+                if ($submenu.length) {
+                    // 如果有子菜单
+                    if ($submenu.is(':hidden')) {
+                        $submenu.show();
+                        $this.addClass('active');
+                    } else {
+                        $submenu.hide();
+                        $this.removeClass('active');
+                    }
+                } else {
+                    // 没有子菜单，显示内容
+                    $this.addClass('active');
+                    const target = $this.data('target');
+                    showContent(target);
+                }
+            });
+
+            // 子菜单项点击事件
+            $('.submenu-item').click(function () {
+                const $this = $(this);
+                // 移除所有菜单项和子菜单项的 active 类
+                $('.menu-item, .submenu-item').removeClass('active');
+                // 给当前点击的子菜单项添加 active 类
+                $this.addClass('active');
+                // 给对应的父菜单项添加 active 类
+                $this.closest('.submenu').prev('.menu-item').addClass('active');
+                // 显示内容
+                const target = $this.data('target');
+                showContent(target);
+            });
+
+            // 显示内容的函数
+            function showContent(target) {
+                const $content = $('#content');
+                $content.empty(); // 清空内容区域
+                const $targetContent = $('#' + target).clone(); // 克隆目标内容
+                $content.append($targetContent); // 将克隆的内容添加到内容区域
+            }
+        });
+    </script>
+</body>
+
+</html>
