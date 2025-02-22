@@ -10,7 +10,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url(./img/bg_页面_1.png);
+            background-image: url(bg_页面_1.png);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,7 +53,10 @@
             font-size: 24px;
         }
 
-        .menu-item:hover { background-color: #ffe680; }
+        .menu-item:hover {
+            background-color: #ffe680;
+        }
+
         .menu-item.active {
             background-color: #fff;
             color: #00bfa5;
@@ -79,7 +82,10 @@
             font-size: 20px;
         }
 
-        .submenu-item:hover { background-color: #ffe680; }
+        .submenu-item:hover {
+            background-color: #ffe680;
+        }
+
         .submenu-item.active {
             background-color: #fff;
             color: #00bfa5;
@@ -139,12 +145,21 @@
 
         /* 响应式适配 */
         @media (max-width: 1024px) {
-            .gallery img { width: calc(50% - 20px); } /* 平板端两列 */
+            .gallery img {
+                width: calc(50% - 20px);
+            }
+            /* 平板端两列 */
         }
 
         @media (max-width: 768px) {
-            .container { width: 95%; height: auto; }
-            .gallery img { width: calc(100% - 20px); } /* 手机端单列 */
+            .container {
+                width: 95%;
+                height: auto;
+            }
+            .gallery img {
+                width: calc(100% - 20px);
+            }
+            /* 手机端单列 */
         }
 
         /* 模态框 */
@@ -163,19 +178,24 @@
             transition: opacity 0.3s;
         }
 
-        .modal.active { opacity: 1; }
+        .modal.active {
+            opacity: 1;
+        }
+
         .modal-content {
             position: relative;
             max-width: 90%;
             max-height: 90%;
             transition: transform 0.3s;
         }
+
         .modal-content img {
             max-width: 100%;
             max-height: 90vh;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
+
         .modal-close {
             position: absolute;
             top: -40px;
@@ -183,9 +203,12 @@
             color: white;
             font-size: 40px;
             cursor: pointer;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
-        .modal-close:hover { color: #ffcc66; }
+
+        .modal-close:hover {
+            color: #ffcc66;
+        }
 
         @media (max-width: 768px) {
             .modal-close {
@@ -196,7 +219,10 @@
         }
 
         /* 其他页面样式 */
-        .hidden-content { display: none; }
+        .hidden-content {
+            display: none;
+        }
+
         #course-intro {
             width: 100%;
             flex-grow: 1;
@@ -206,12 +232,14 @@
             justify-content: center;
             position: relative;
         }
+
         #course-intro img {
             border-radius: 10%;
             width: 400px;
             height: 400px;
             margin-right: 20px;
         }
+
         .kctext {
             font-size: 24px;
             line-height: 1.5;
@@ -219,7 +247,12 @@
             flex: 1;
             letter-spacing: 0.5px;
         }
-        .kctext h1 { font-size: 32px; margin-bottom: 20px; }
+
+        .kctext h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
         .title-overlay {
             position: absolute;
             top: 0;
@@ -254,7 +287,7 @@
 
         <!-- 右侧内容区域 -->
         <div class="content" id="content">
-            <img src="./img/logo.png" alt="Logo" />
+            <img src="logo.png" alt="Logo" />
         </div>
     </div>
 
@@ -264,7 +297,7 @@
             <div class="title-overlay">
                 <h1>课程介绍</h1>
             </div>
-            <img src="./img/meishu01.jpg" alt="课程介绍图片">
+            <img src="meishu01.jpg" alt="课程介绍图片">
             <div class="kctext">
                 幼儿班以创意美术为主，让小朋友认识色彩，感受色彩，初步接触绘画材料...
             </div>
@@ -272,58 +305,57 @@
         <!-- 课堂展示区域 -->
         <div id="class-display">
             <div class="gallery">
-                <img src="./img/msktzs01.jpg" alt="课堂展示1">
-                <img src="./img/msktzs02.jpg" alt="课堂展示2">
-                <img src="./img/msktzs03.jpg" alt="课堂展示3">
-				<img src="./img/msktzs04.jpg" alt="课堂展示4">
-				<img src="./img/msktzs05.jpg" alt="课堂展示5">
-				<img src="./img/msktzs06.jpg" alt="课堂展示6">
-				<img src="./img/msktzs07.jpg" alt="课堂展示7">
-				<img src="./img/msktzs08.jpg" alt="课堂展示8">
-				<img src="./img/msktzs09.jpg" alt="课堂展示9">
+                <img src="msktzs01.jpg" alt="课堂展示1">
+                <img src="msktzs02.jpg" alt="课堂展示2">
+                <img src="msktzs03.jpg" alt="课堂展示3">
+                <img src="msktzs04.jpg" alt="课堂展示4">
+                <img src="msktzs05.jpg" alt="课堂展示5">
+                <img src="msktzs06.jpg" alt="课堂展示6">
+                <img src="msktzs07.jpg" alt="课堂展示7">
+                <img src="msktzs08.jpg" alt="课堂展示8">
+                <img src="msktzs09.jpg" alt="课堂展示9">
                 <!-- 更多图片... -->
             </div>
         </div>
         <!-- 其他隐藏内容结构类似 -->
-		<div id="junior-class">
-						<div>初级班的具体内容</div>
-						<img src="./img/junior-class.png" alt="初级班图片">
-					</div>
-					<div id="junior-teachers">
-						<div>初级班任课老师的具体内容</div>
-						<img src="./img/junior-teachers.png" alt="初级班任课老师图片">
-					</div>
-					<div id="junior-class-display">
-						<div>初级班课堂展示的具体内容</div>
-						<img src="./img/junior-class-display.png" alt="初级班课堂展示图片">
-					</div>
-					<div id="middle-class">
-						<div>初中班级的具体内容</div>
-						<img src="./img/middle-class.png" alt="初中班级图片">
-					</div>
-					<div id="middle-teachers">
-						<div>初中班级任课老师的具体内容</div>
-						<img src="./img/middle-teachers.png" alt="初中班级任课老师图片">
-					</div>
-					<div id="middle-class-display">
-						<div>初中班级课堂展示的具体内容</div>
-						<img src="./img/middle-class-display.png" alt="初中班级课堂展示图片">
-					</div>
-				</div>
+        <div id="junior-class">
+            <div>初级班的具体内容</div>
+            <img src="junior-class.png" alt="初级班图片">
+        </div>
+        <div id="junior-teachers">
+            <div>初级班任课老师的具体内容</div>
+            <img src="junior-teachers.png" alt="初级班任课老师图片">
+        </div>
+        <div id="junior-class-display">
+            <div>初级班课堂展示的具体内容</div>
+            <img src="junior-class-display.png" alt="初级班课堂展示图片">
+        </div>
+        <div id="middle-class">
+            <div>初中班级的具体内容</div>
+            <img src="middle-class.png" alt="初中班级图片">
+        </div>
+        <div id="middle-teachers">
+            <div>初中班级任课老师的具体内容</div>
+            <img src="middle-teachers.png" alt="初中班级任课老师图片">
+        </div>
+        <div id="middle-class-display">
+            <div>初中班级课堂展示的具体内容</div>
+            <img src="middle-class-display.png" alt="初中班级课堂展示图片">
+        </div>
     </div>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // 菜单交互
-            $('.menu-item').click(function() {
+            $('.menu-item').click(function () {
                 const $this = $(this);
                 const $submenu = $this.next('.submenu');
                 $('.menu-item, .submenu-item').removeClass('active');
                 $('.submenu').hide();
 
                 if ($submenu.length) {
-                    $submenu.is(':hidden') 
-                        ? $submenu.show().prev().addClass('active')
+                    $submenu.is(':hidden')
+                       ? $submenu.show().prev().addClass('active')
                         : $submenu.hide().prev().removeClass('active');
                 } else {
                     showContent($this.data('target'));
@@ -332,10 +364,10 @@
             });
 
             // 子菜单交互
-            $('.submenu-item').click(function() {
+            $('.submenu-item').click(function () {
                 $('.submenu-item').removeClass('active');
                 $(this).addClass('active')
-                    .closest('.submenu').prev().addClass('active');
+                   .closest('.submenu').prev().addClass('active');
                 showContent($(this).data('target'));
             });
 
@@ -370,10 +402,11 @@
             }
 
             // 图片点击事件
-            $(document).on('click', '.gallery img', function() {
+            $(document).on('click', '.gallery img', function () {
                 openModal($(this).attr('src'));
             });
         });
     </script>
 </body>
+
 </html>
